@@ -24,22 +24,19 @@ const App = () => {
 	}
 
   	return (
-		<div style={{width: 500, margin: 'auto'}} >
-			<h3>Search </h3> 
-			<input onChange={handleChange} type='text'/>	
-			<h3>Add</h3>
-			<form onSubmit={submit}>
-				<input ref={ref} type='text'/>
+		<>
+			SEARCH: <input onChange={handleChange} type='text'/>	
+			<form onSubmit={submit} style={{margin: '15px'}}>
+				ADD ITEM: <input ref={ref} type='text'/>
 				<button type='submit'>Add items</button>
 			</form>
-			<h3>Items</h3>
 			<div>
+				ITEMS
 				{filtered.map((item, i) => (
 					<p key={item + i}>{item}</p>
 				) )}
 			</div>
-		
-		</div>
+		</>
   	);
 }
 
